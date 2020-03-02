@@ -10,17 +10,14 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
-import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
-import com.badlogic.gdx.physics.box2d.Joint;
 import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.physics.box2d.joints.WeldJoint;
 import com.badlogic.gdx.physics.box2d.joints.WeldJointDef;
-import com.badlogic.gdx.utils.Array;
 
 public class SumoGame extends ApplicationAdapter {
 	SpriteBatch batch;
@@ -77,19 +74,13 @@ public class SumoGame extends ApplicationAdapter {
 			}
 
 			@Override
-			public void endContact(Contact contact) {
-
-			}
+			public void endContact(Contact contact) { }
 
 			@Override
-			public void preSolve(Contact contact, Manifold oldManifold) {
-
-			}
+			public void preSolve(Contact contact, Manifold oldManifold) { }
 
 			@Override
-			public void postSolve(Contact contact, ContactImpulse impulse) {
-
-			}
+			public void postSolve(Contact contact, ContactImpulse impulse) { }
 		});
 		createGround();
 
@@ -138,8 +129,6 @@ public class SumoGame extends ApplicationAdapter {
 
 	public void endMatch() {
 		world.clearForces();
-		// world.destroyJoint(heads);
-
 	}
 
 	private void getInput(float delta) {
